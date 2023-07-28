@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mbNav{
+    @apply bg-blue-600 h-10 flex items-center justify-center
+}
