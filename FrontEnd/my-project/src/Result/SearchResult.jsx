@@ -1,4 +1,6 @@
 import Trop from "./Trop";
+import { ticketData } from "../Data/ticketData";
+import { busData } from "../Data/data";
 
 const SearchResult = () => {
   return (
@@ -8,7 +10,9 @@ const SearchResult = () => {
           <span class=" text-xl font-semibold ">Find Your Results</span>
         </div>
 
-        <Trop/>
+        {ticketData.map((data) => (
+          <Trop name={data.name} route={data.route} time={data.DepTime} seat={data.seats} price={data.price} />
+        ))}
       </div>
     </>
   );
