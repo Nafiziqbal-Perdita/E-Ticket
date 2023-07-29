@@ -5,6 +5,7 @@ function searchInSohoz(request, response, next) {
 
     console.log('First');
 
+
     const url = `https://www.shohoz.com/booking/bus/search?fromcity=${request.body.from}&tocity=${request.body.to}&doj=${request.body.date}&dor=`;
 
     puppeteer.launch({
@@ -66,7 +67,7 @@ function searchInSohoz(request, response, next) {
         await browser.close();
 
         // Sending the Digimon names to Postman
-        // response.send(ticketItems);
+        response.send(ticketItems);
       
     });
 
