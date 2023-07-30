@@ -1,176 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- the whole screen  -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
-</head>
+    <div class="h-screen w-screen bg-gray-200 grid grid-cols-12 grid-rows-12">
+      <!-- nav bar  -->
 
-<body>
+      <div class="col-span-full bg-sky-400 flex justify-center items-center">
+        <p>Real Time Ticket</p>
+      </div>
 
-    <!-- this is a nav bar -->
-    <nav class="font-mono text-white font-extrabold text-lg  mbNav ">
+      <!-- search utility -->
 
-        Real Time Ticket
+      <div
+        class="bg-sky-200 col-start-2 col-end-12 row-start-2 row-end-7 mt-2 flex justify-center items-center"
+      >
+        <!-- searching form -->
 
-    </nav>
+        <form class="bg-white h-4/5 flex-row space-y-4 p-2">
+          <div class="p-1 flex space-x-2">
+            <label for="">From:</label>
+            <input
+              class="border-2 border-slate-500 rounded-lg w-3/5"
+              type="text"
+            />
+          </div>
 
+          <div class="p-1 flex space-x-7">
+            <label for="">To:</label>
+            <input
+              class="border-2 border-slate-500 rounded-lg w-3/5"
+              type="text"
+            />
+          </div>
 
-    <!-- main body  -->
+          <div class="p-1 flex space-x-3">
+            <label for="">Date:</label>
+            <input
+              class="border-2 border-slate-500 rounded-lg w-3/5"
+              type="date"
+            />
+          </div>
 
-    <div >
-
-        <!-- search utilities -->
-
-        <div>
-            <div class="bg-slate-400 mt-4 text-center">
-                <span class=" text-xl font-semibold ">
-                    Search Your Ticket
-                </span>
+          <div class="bg-slate-600 w-full flex justify-center">
+            <div class="bg-white w-2/4 text-center">
+              <button>Search</button>
             </div>
-            <!-- sear form  -->
-            <form class="mt-2 h-auto flex items-center justify-center w-auto ">
+          </div>
 
-                <div class="bg-blue-400 flex flex-col w-2/3 h-fit p-2 searchCard ">
-                    <div class=" ">
-                        <label class="text-lg font-bold">From</label>
+          <div class="w-5/6  m-6 bg-slate-100">
+            <p class="text-sm">Note:</p>
+            <p class="font-serif text-xs">
+              Please make sure a stable connection
+            </p>
+          </div>
+        </form>
+      </div>
 
-                        <input class="border m-1 p-2 rounded-lg " type="text">
-                    </div>
-                    <div>
-                        <label class="text-lg font-bold">To</label>
-                        <input class="border my-1 ml-7  p-2 rounded-lg " type="text">
-                    </div>
-                    <div>
-                        <label class="text-lg font-bold">Date</label>
-                        <input class="m-1 ml-2 p-2 rounded-lg " type="date">
-                    </div>
-                </div>
+      <!-- Results utility -->
+
+<div class=" col-span-full row-start-7 row-end-13 m-2 bg-white  flex justify-center ">
+
+  <!-- every cart for Results -->
+<div class="bg-slate-200 w-11/12 h-32 mt-2 grid grid-cols-8 grid-rows-4">
+
+  <!-- name of bus -->
+<p class="col-start-1 col-end-7 ml-1 text-lg font-serif font-bold bg-white" >Hanif Enterprise</p>
+<p class="col-start-1 col-end-7 ml-1 text-base font-serif font-medium" >Dhaka to Barisal</p>
 
 
-
-            </form>
-
-
-            <!-- search Result  -->
-            <div>
-
-                <div class="bg-slate-400 mt-4 text-center">
-                    <span class=" text-xl font-semibold ">
-                        Find Your Results
-                    </span>
-                </div>
-
-                <div class=" m-2 ">
-
-                    <div class="bg-blue-500 flex items-center justify-between rounded-xl m-2 shadow-md ">
-
-                        <!-- information  -->
-                        <div class="p-2">
-
-                            <label class="font-mono text-2xl font-extrabold">Hanif</label>
-                            <br />
-                            <span>
-                                <label class="text-lg font-bold">Barisal To Dhaka</label><br />
-                                <label class="text-base font-semibold">Seats Left: 20</label>
-                            </span>
-                            <br />
-                            <span>
-                                <label class="text-base font-semibold">Time: 5.00am</label>
-                            </span>
-                            <br />
-                            <span>
-                                <label class="text-sm font-medium">Fare: 500 tk</label>
-                            </span>
-                        </div>
-
-                        <!-- photo -->
-                        <div class="">
-
-                            <img class="h-28 mr-4" src="/Images/jatri.jpg" alt="">
-
-                        </div>
-
-                    </div>
+</div>
 
 
 
 
 
-
-
-                </div>
-                <div class=" m-2 ">
-
-                    <div class="bg-blue-500 flex items-center justify-between rounded-xl m-2 shadow-md ">
-
-                        <!-- information  -->
-                        <div class="p-2">
-
-                            <label class="font-mono text-2xl font-extrabold">Hanif</label>
-                            <br />
-                            <span>
-                                <label class="text-lg font-bold">Barisal To Dhaka</label><br />
-                                <label class="text-base font-semibold">Seats Left: 20</label>
-                            </span>
-                            <br />
-                            <span>
-                                <label class="text-base font-semibold">Time: 5.00am</label>
-                            </span>
-                            <br />
-                            <span>
-                                <label class="text-sm font-medium">Fare: 500 tk</label>
-                            </span>
-                        </div>
-
-                        <!-- photo -->
-                        <div class="">
-
-                            <img class="h-28 mr-4" src="/Images/jatri.jpg" alt="">
-
-                        </div>
-
-                    </div>
-
-
-
-
-
-
-
-                </div>
-
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-        </div>
-
+</div>
 
 
 
 
 
     </div>
-
-
-
-
-
-
-
-
-
-
-</body>
-
+  </body>
 </html>
