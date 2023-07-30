@@ -8,4 +8,7 @@
     @apply bg-blue-600 h-10 flex items-center justify-center
 }
 
+.searchCard{
+    @apply rounded-[29px] shadow-5xl
+}
 
