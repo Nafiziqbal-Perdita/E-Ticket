@@ -5,14 +5,20 @@ import { busData } from "../Data/data";
 const SearchResult = () => {
   return (
     <>
-      <div>
-        <div class="bg-slate-400 mt-4 text-center">
-          <span class=" text-xl font-semibold ">Find Your Results</span>
-        </div>
+      <div class=" resultCart col-span-full row-start-7 row-end-13 m-2 bg-white  flex-row justify-center  overflow-auto  ">
+        {/* <!-- every cart for Results --> */}
+      
+    
+    {
+      ticketData.map((data)=>(
 
-        {ticketData.map((data) => (
-          <Trop name={data.name} route={data.route} time={data.DepTime} seat={data.seats} price={data.price} />
-        ))}
+        <Trop   name={data.name} route={data.route} time={data.DepTime} seat={data.seats} price={data.price}     /> 
+
+      ))
+    }
+
+
+
       </div>
     </>
   );

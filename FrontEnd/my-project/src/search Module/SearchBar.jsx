@@ -1,23 +1,48 @@
 const SearchBar = () => {
   return (
     <>
-      <form class="mt-2 h-auto flex items-center justify-center w-auto ">
-        <div class="bg-blue-400 flex flex-col w-2/3 h-fit p-2 rounded-md shadow-xl ">
-          <div class=" ">
-            <label class="text-lg font-bold">From</label>
+      <div class=" col-start-2 col-end-12 row-start-2 row-end-7 mt-2 flex justify-center items-center">
+        {/* <!-- searching form --> */}
 
-            <input class="border m-1 p-2 rounded-lg " type="text" />
+        <form class="formCart h-4/5 flex-row space-y-4 p-2">
+          <div class="p-1 flex space-x-2">
+            <label for="">From:</label>
+            <input
+              class="border-2 border-slate-500 rounded-lg w-3/5"
+              type="text"
+            />
           </div>
-          <div>
-            <label class="text-lg font-bold">To</label>
-            <input class="border my-1 ml-7  p-2 rounded-lg " type="text" />
+
+          <div class="p-1 flex space-x-7">
+            <label for="">To:</label>
+            <input
+              class="border-2 border-slate-500 rounded-lg w-3/5"
+              type="text"
+            />
           </div>
-          <div>
-            <label class="text-lg font-bold">Date</label>
-            <input class="m-1 ml-2 p-2 rounded-lg " type="date" />
+
+          <div class="p-1 flex space-x-3">
+            <label for="">Date:</label>
+            <input
+              class="border-2 border-slate-500 rounded-lg w-3/5"
+              type="date"
+            />
           </div>
-        </div>
-      </form>
+          {/* <!-- search button  --> */}
+          <div class=" w-full flex justify-center ">
+            <div class=" buttonCart bg-white w-2/4 text-center       ">
+              <button>Search</button>
+            </div>
+          </div>
+
+          <div class="w-5/6  m-6 bg-slate-100">
+            <p class="text-sm">Note:</p>
+            <p class="font-serif text-xs">
+              Please make sure a stable connection
+            </p>
+          </div>
+        </form>
+      </div>
     </>
   );
 };

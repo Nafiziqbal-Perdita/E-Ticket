@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-.mbNav{
-    @apply bg-blue-600 h-10 flex items-center justify-center
+
+
+
+/* neumorphism design  */
+.navCart{
+    @apply rounded-[2px] shadow-nav
+}
+.searchCart{
+    @apply rounded-[12px] shadow-search
+}
+.formCart{
+    @apply rounded-[35px] bg-slate-200 shadow-form
+}
+.resultCart{
+    @apply rounded-[8px] shadow-result
+}
+.buttonCart{
+    @apply  hover:scale-110 duration-300  rounded-[45px] shadow-searchButton
+}
+.tropCart{
+    @apply rounded-[18px] shadow-trops 
 }

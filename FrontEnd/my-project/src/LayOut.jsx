@@ -3,27 +3,19 @@ import SearchBar from "./search Module/SearchBar";
 import SearchResult from "./Result/SearchResult";
 const LayOut = () => {
   return (
-    <div>
+    <div class="  h-screen w-screen bg-gray-200 grid grid-cols-12 grid-rows-12">
+      {/* navbar  */}
       <NavBar />
-      <div>
-        <div>
-          <div class="bg-slate-400 mt-4 text-center">
-            <span class=" text-xl font-semibold ">Search Your Ticket</span>
-          </div>
+      {/* search utility */}
+      <SearchBar />
 
-          <SearchBar />
-          <SearchResult />
+{/* result utility  */}
+<SearchResult/>
 
 
 
 
 
-
-
-
-
-        </div>
-      </div>
     </div>
   );
 };
