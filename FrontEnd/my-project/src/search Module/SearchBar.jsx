@@ -1,40 +1,21 @@
 import { useState } from "react";
-import axios from "axios";
+import { useTicket } from "../Context/TicketContext";
+
 
 const SearchBar = () => {
   const [from, setFrom] = useState("Enter");
   const [to, setTo] = useState("Enter");
   const [time, setTime] = useState();
 
-  const[ticket,setTicket]=useState();
+
+  const {asyncCall}=useTicket();
 
 
-  // making post request in the server
+ 
 
-  async function asyncCall(e) {
-    console.log("clicked the request function");
-    e.preventDefault();
 
-    try {
-      const res = await axios.post("http://localhost:7000/search/", {
-        from: "Dhaka",
-        to: "Barisal",
-        date: "31-Jul-2023",
-      });
 
-      // console.log(res.data);
-      const tickets = res.data;
-      setTicket(tickets);
-
-      // tickets.map((e) => console.log(e.name + " " + e.price));
-    } catch (error) {
-      console.log("There is an error");
-      console.error(error);
-    }
-
-    // Expected output: "resolved"
-  }
-
+  
   return (
     <>
       <div className=" col-start-2 col-end-12 row-start-2 row-end-7 mt-2 flex justify-center items-center">

@@ -1,6 +1,5 @@
 const express = require("express"); // Adding Express
 const searchRoute = require("./Routes/search");
-
 const app = express(); // Initializing Express
 
 app.use(express.json());
