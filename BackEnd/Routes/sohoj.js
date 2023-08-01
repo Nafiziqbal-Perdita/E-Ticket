@@ -49,11 +49,8 @@ function searchInSohoz(request, response, next) {
                     name: name.innerText,
                     type: type.innerText,
                     route: route.innerText,
-                    startPoint: startPoint.innerText,
-                    endPoint: endPoint.innerText,
-                    DepTime: depTime.innerText,
-                    ArrTime: arrTime.innerText,
-                    seats: seatAval.innerText,
+                    departureTime: depTime.innerText,
+                    seat: seatAval.innerText,
                     price: price.innerText,
                 };
 

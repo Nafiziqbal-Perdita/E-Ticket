@@ -1,8 +1,7 @@
 import Trop from "./Trop";
-import { ticketData } from "../Data/ticketData";
-// import { busData } from "../Data/data";
+
 import { useTicket } from "../Context/TicketContext";
-import { useEffect } from "react";
+
 
 const SearchResult = () => {
   const { ticket } = useTicket();
@@ -21,8 +20,8 @@ const SearchResult = () => {
             key={i}
             name={data.name}
             route={data.route}
-            time={data.DepTime}
-            seat={data.seats}
+            time={data.departureTime}
+            seat={data.seat}
             price={data.price}
           />
         ))}

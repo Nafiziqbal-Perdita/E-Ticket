@@ -15,14 +15,14 @@ const Trop = ({ name, route, time, seat, price }) => {
           {route.replace(/Route:/g,'')}
         </p>
         <p className="col-start-1 col-end-7 row-start-3 row-end-3 ml-1 mt-3 text-base font-serif font-medium">
-          {" "}
+      
           Start Time:
           <label className="text-sm font-mono font-semibold"> {time} </label>
         </p>
         <p className="col-start-1 col-end-7 ml-1 row-start-4 row-end-4  text-base font-serif font-medium">
-          Price:
+          Price``:
           <label className="text-sm font-mono font-semibold"> {price} </label>
-          <label className="text-sm font-mono font-semibold"> |Seats: {seat} </label>
+          <label className="text-sm font-mono font-semibold"> |Seats: {seat.replace(/Seats/g,' ')} </label>
         </p>
 
         {/* <!-- photo div --> */}

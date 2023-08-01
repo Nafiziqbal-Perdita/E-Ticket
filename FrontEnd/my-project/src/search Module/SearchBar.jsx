@@ -3,12 +3,11 @@ import { useTicket } from "../Context/TicketContext";
 
 
 const SearchBar = () => {
-  const [from, setFrom] = useState("Enter");
-  const [to, setTo] = useState("Enter");
-  const [time, setTime] = useState();
+ 
 
 
   const {asyncCall}=useTicket();
+  const {from,to,time,setFrom,setTo,setTime}=useTicket();
 
 
  
