@@ -1,44 +1,66 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTicket } from "../Context/TicketContext";
+import RouteSuggestion from "./RouteSuggestion";
 
+import data from "./data.json";
 
 const SearchBar = () => {
- 
+  const { asyncCall } = useTicket();
+  const {
+    from,
+    to,
+    time,
+    filterDataFrom,
+    setFrom,
+    setTo,
+    setTime,
+    handleFilterFrom,
+  } = useTicket();
 
-
-  const {asyncCall}=useTicket();
-  const {from,to,time,setFrom,setTo,setTime}=useTicket();
-
-
- 
-
-
-
-  
   return (
     <>
       <div className=" col-start-2 col-end-12 row-start-2 row-end-7 mt-2 flex justify-center items-center">
         {/* <!-- searching form --> */}
 
-        <form className="formCart h-4/5 flex-row space-y-4 p-2">
+        <form className="formCart h-4/5 flex-row space-y-4 p-2  overflow-auto">
           <div className="p-1 flex space-x-2">
             <label>From:</label>
-            <input
-              className="border-2 border-slate-500 rounded-lg w-3/5"
-              type="text"
-              value={from}
-              onChange={(e) => setFrom(e.target.value)}
-            />
+
+            <div>
+              <input
+                className="border-2 border-slate-500 rounded-lg w-4/5"
+                type="text"
+                value={from}
+                onChange={handleFilterFrom}
+              />
+
+              {/* search suggeston */}
+
+              {filterDataFrom.length != 0 && (
+                <div>
+                  {filterDataFrom.slice(0, 5).map((value) => (
+                    <RouteSuggestion name={value.name} />
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="p-1 flex space-x-7">
             <label>To:</label>
-            <input
-              className="border-2 border-slate-500 rounded-lg w-3/5"
-              type="text"
-              value={to}
-              onChange={(e) => setTo(e.target.value)}
-            />
+            <div>
+              <input
+                className="border-2 border-slate-500 rounded-lg w-4/5"
+                type="text"
+                value={to}
+                onChange={(e) => setTo(e.target.value)}
+              />
+
+              {/* search suggeston */}
+              {/* <RouteSuggestion /> */}
+            
+            
+            </div>
           </div>
 
           <div className="p-1 flex space-x-3">

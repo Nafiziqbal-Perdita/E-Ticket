@@ -1,111 +1,143 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/dist/output.css" rel="stylesheet" />
-</head>
+  <body>
+    <!-- the whole screen  -->
 
-<body>
-  <!-- the whole screen  -->
+    <div class="h-screen w-screen bg-gray-200 grid grid-cols-12 grid-rows-12">
+      <!-- nav bar  -->
 
-  <div class="  h-screen w-screen bg-gray-200 grid grid-cols-12 grid-rows-12">
-    <!-- nav bar  -->
-
-    <div class=" navCart col-span-full bg-sky-400 flex justify-center items-center">
-      <p class="font-extrabold font-serif text-lg text-yellow-50">Real Time Ticket</p>
-    </div>
-
-    <!-- search utility -->
-
-    <div
-      class=" col-start-2 col-end-12 row-start-2 row-end-7 mt-2 flex justify-center items-center">
-      <!-- searching form -->
-
-      <form class="formCart h-4/5 flex-row space-y-4 p-2">
-        <div class="p-1 flex space-x-2">
-          <label for="">From:</label>
-          <input class="border-2 border-slate-500 rounded-lg w-3/5" type="text" />
-        </div>
-
-        <div class="p-1 flex space-x-7">
-          <label for="">To:</label>
-          <input class="border-2 border-slate-500 rounded-lg w-3/5" type="text" />
-        </div>
-
-        <div class="p-1 flex space-x-3">
-          <label for="">Date:</label>
-          <input class="border-2 border-slate-500 rounded-lg w-3/5" type="date" />
-        </div>
-<!-- search button  -->
-        <div class=" w-full flex justify-center ">
-          <div class=" buttonCart bg-white w-2/4 text-center       ">
-            <button>Search</button>
-          </div>
-        </div>
-
-        <div class="w-5/6  m-6 bg-slate-100">
-          <p class="text-sm">Note:</p>
-          <p class="font-serif text-xs">
-            Please make sure a stable connection
-          </p>
-        </div>
-      </form>
-    </div>
-
-
-
-
-
-
-
-    <!-- Results utility -->
-
-    <div
-      class=" resultCart col-span-full row-start-7 row-end-13 m-2 bg-white  flex-row justify-center  overflow-auto  ">
-
-      <!-- every cart for Results -->
-      <div class= "tropCart bg-slate-200 w-11/12 h-32 ml-5 mt-2 grid grid-cols-8 grid-rows-4">
-
-        <!-- name of bus -->
-        <p class="col-start-1 col-end-7 ml-2 text-lg font-serif font-bold">Hanif Enterprise
-          <label class="font-semibold text-sm">,
-            <sub>AC</sub>
-          </label>
+      <div
+        class="navCart col-span-full bg-sky-400 flex justify-center items-center"
+      >
+        <p class="font-extrabold font-serif text-lg text-yellow-50">
+          Real Time Ticket
         </p>
-        <p class="col-start-1 col-end-7 row-start-2 row-end-2  ml-1 text-base font-serif font-medium">Dhaka to Barisal
-        </p>
-        <p class="col-start-1 col-end-7 row-start-3 row-end-3 ml-1 text-base font-serif font-medium"> Start Time:
-
-          <label class="text-sm font-mono font-semibold"> 5:00 AM </label>
-
-        </p>
-        <p class="col-start-1 col-end-7 ml-1 row-start-4 row-end-4  text-base font-serif font-medium"> Ticket Fare:
-
-          <label class="text-sm font-mono font-semibold"> 500 Tk </label>
-
-        </p>
-
-        <!-- photo div -->
-        <div class=" bg-black col-start-6 col-end-8 row-start-2 row-end-5 mb-4   ">
-          <img class="h-full w-full" src="../Images/jatri.jpg" alt="">
-        </div>
-
-
-
-
       </div>
 
+      <!-- search utility -->
 
+      <div
+        class="col-start-2 col-end-12 row-start-2 row-end-7 mt-2 flex justify-center items-center"
+      >
+        <!-- searching form -->
 
+        <form class="formCart h-4/5 flex-row space-y-4 p-2 overflow-auto">
+          <div class="p-1 flex space-x-2">
+            <label for="">From:</label>
+            <!-- from input box -->
+            <div class=" ">
+              <input
+                class="border-2 border-slate-500 rounded-lg w-4/5"
+                type="text"
+              />
+              <!-- search suggestion -->
+              <div class="bg-white w-4/5 rounded-lg mt-1">
+                <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                  <p class="px-1">Dhaka</p>
+                </div>
+
+                <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                  <p class="px-1">Dhaka</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-1 flex space-x-7">
+            <label for="">To:</label>
+            <!-- search destination part -->
+            <div class=" ">
+              <input
+                class="border-2 border-slate-500 rounded-lg w-4/5"
+                type="text"
+              />
+              <!-- search suggestion -->
+              <div class="bg-white w-4/5 rounded-lg mt-1">
+                <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                  <p class="px-1">Dhaka</p>
+                </div>
+
+                <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                  <p class="px-1">Dhaka</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-1 flex space-x-3">
+            <label for="">Date:</label>
+            <input
+              class="border-2 border-slate-500 rounded-lg w-3/5"
+              type="date"
+            />
+          </div>
+          <!-- search button  -->
+          <div class="w-full flex justify-center">
+            <div class="buttonCart bg-white w-2/4 text-center">
+              <button>Search</button>
+            </div>
+          </div>
+
+          <div class="w-5/6 m-6 bg-slate-100">
+            <p class="text-sm">Note:</p>
+            <p class="font-serif text-xs">
+              Please make sure a stable connection
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Results utility -->
+
+      <div
+        class="resultCart col-span-full row-start-7 row-end-13 m-2 bg-white flex-row justify-center overflow-auto"
+      >
+        <!-- every cart for Results -->
+        <div
+          class="tropCart bg-slate-200 w-11/12 h-32 ml-5 mt-2 grid grid-cols-8 grid-rows-4"
+        >
+          <!-- name of bus -->
+          <p class="col-start-1 col-end-7 ml-2 text-lg font-serif font-bold">
+            Hanif Enterprise
+            <label class="font-semibold text-sm"
+              >,
+              <sub>AC</sub>
+            </label>
+          </p>
+          <p
+            class="col-start-1 col-end-7 row-start-2 row-end-2 ml-1 text-base font-serif font-medium"
+          >
+            Dhaka to Barisal
+          </p>
+          <p
+            class="col-start-1 col-end-7 row-start-3 row-end-3 ml-1 text-base font-serif font-medium"
+          >
+            Start Time:
+
+            <label class="text-sm font-mono font-semibold"> 5:00 AM </label>
+          </p>
+          <p
+            class="col-start-1 col-end-7 ml-1 row-start-4 row-end-4 text-base font-serif font-medium"
+          >
+            Ticket Fare:
+
+            <label class="text-sm font-mono font-semibold"> 500 Tk </label>
+          </p>
+
+          <!-- photo div -->
+          <div
+            class="bg-black col-start-6 col-end-8 row-start-2 row-end-5 mb-4"
+          >
+            <img class="h-full w-full" src="../Images/jatri.jpg" alt="" />
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
-
-
-  </div>
-</body>
-
+  </body>
 </html>

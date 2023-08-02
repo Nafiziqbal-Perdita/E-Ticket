@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { nameTojatri } from "../Data/nameTojatri";
-import { data } from "autoprefixer";
+import data from "../search Module/data.json";
 const TicketContext = React.createContext();
 
 export const useTicket = () => {
@@ -14,6 +14,9 @@ export const TicketProvider = ({ children }) => {
   const [to, setTo] = useState("");
   const [time, setTime] = useState("");
   const [ticket, setTicket] = useState([]);
+
+  const [filterDataFrom, setFilterDataFrom] = useState([]);
+  const [word, setWord] = useState("");
 
   //functions are deployed here
 
@@ -36,11 +39,7 @@ export const TicketProvider = ({ children }) => {
     }
   };
 
-
-
-
   //for jatri
-
 
   const jatriCall = async () => {
     // making requst to jatri information
@@ -80,17 +79,13 @@ export const TicketProvider = ({ children }) => {
       console.log("There is an error");
       console.error(error);
     }
-
-
-
-
   };
 
   async function asyncCall(e) {
     console.log("clicked the request function");
     e.preventDefault();
     // sohojCall();
-    jatriCall();
+    // jatriCall();
     console.log(from);
     console.log(to);
     console.log(time);
@@ -98,15 +93,35 @@ export const TicketProvider = ({ children }) => {
     // Expected output: "resolved"
   }
 
+  const handleFilterFrom = (e) => {
+    const searchWord = e.target.value;
+    setWord(searchWord);
+    setFrom(e.target.value);
+
+    const dataFilter = data.filter((value) => {
+      const newData = value.name
+        .toLowerCase()
+        .includes(searchWord.toLowerCase());
+      return newData;
+    });
+    if (searchWord === "") {
+      setFilterDataFrom([]);
+    } else {
+      setFilterDataFrom(dataFilter);
+    }
+  };
+
   const value = {
     ticket,
     from,
     to,
     time,
+    filterDataFrom,
     setFrom,
     setTo,
     setTime,
     asyncCall,
+    handleFilterFrom,
   };
 
   return (

@@ -1,0 +1,64 @@
+<form className="formCart h-4/5 flex-row space-y-4 p-2 overflow-auto">
+          <div className="p-1 flex space-x-2">
+            <label for="">From:</label>
+            <!-- from input box -->
+            <div className=" ">
+              <input
+                className="border-2 border-slate-500 rounded-lg w-4/5"
+                type="text"
+              />
+              <!-- search suggestion -->
+              <div className="bg-white w-4/5 rounded-lg mt-1">
+                <div className="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                  <p className="px-1">Dhaka</p>
+                </div>
+
+                <div className="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                  <p className="px-1">Dhaka</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-1 flex space-x-7">
+            <label for="">To:</label>
+            <!-- search destination part -->
+            <div className=" ">
+              <input
+                className="border-2 border-slate-500 rounded-lg w-4/5"
+                type="text"
+              />
+              <!-- search suggestion -->
+              <div className="bg-white w-4/5 rounded-lg mt-1">
+                <div className="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                  <p className="px-1">Dhaka</p>
+                </div>
+
+                <div className="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                  <p className="px-1">Dhaka</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-1 flex space-x-3">
+            <label for="">Date:</label>
+            <input
+              className="border-2 border-slate-500 rounded-lg w-3/5"
+              type="date"
+            />
+          </div>
+          <!-- search button  -->
+          <div className="w-full flex justify-center">
+            <div className="buttonCart bg-white w-2/4 text-center">
+              <button>Search</button>
+            </div>
+          </div>
+
+          <div className="w-5/6 m-6 bg-slate-100">
+            <p className="text-sm">Note:</p>
+            <p className="font-serif text-xs">
+              Please make sure a stable connection
+            </p>
+          </div>
+        </form>
