@@ -9,7 +9,8 @@ router.use(express.json());
 router.post("/search/sohoj", searchInSohoz, (request, response) => {
 //   const { post } = response.locals;
 
-console.log(request.body);
+
+console.log(request.body); 
 
   console.log("Sohoj route");
   //   response.send("hello");

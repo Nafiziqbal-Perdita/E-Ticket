@@ -18,6 +18,9 @@ export const TicketProvider = ({ children }) => {
   const [filterDataFrom, setFilterDataFrom] = useState([]);
   const [word, setWord] = useState("");
 
+  let jatriData = [];
+  let sohojData = [];
+
   //functions are deployed here
 
   const sohojCall = async () => {
@@ -30,8 +33,10 @@ export const TicketProvider = ({ children }) => {
       });
       // console.log(res.data);
       const tickets = res.data;
-      console.log(tickets);
-      setTicket(tickets);
+      // console.log(tickets);
+      sohojData = tickets;
+      console.log("sohoj " + temp);
+
       // tickets.map((e) => console.log(e.name + " " + e.price));
     } catch (error) {
       console.log("There is an error");
@@ -72,8 +77,10 @@ export const TicketProvider = ({ children }) => {
       });
       // console.log(res.data);
       const tickets = res.data;
-      console.log(tickets);
-      setTicket(tickets);
+      // console.log(tickets);
+      jatriData = tickets;
+      const temp = ticket;
+      console.log("jatri " + temp);
       // tickets.map((e) => console.log(e.name + " " + e.price));
     } catch (error) {
       console.log("There is an error");
@@ -84,14 +91,21 @@ export const TicketProvider = ({ children }) => {
   async function asyncCall(e) {
     console.log("clicked the request function");
     e.preventDefault();
-    // sohojCall();
-    // jatriCall();
+    await sohojCall();
+    await jatriCall();
+
+    const allData = sohojData.concat(jatriData);
+
+    setTicket(allData);
+
     console.log(from);
     console.log(to);
     console.log(time);
 
     // Expected output: "resolved"
   }
+
+  console.log(ticket);
 
   const handleFilterFrom = (e) => {
     const searchWord = e.target.value;

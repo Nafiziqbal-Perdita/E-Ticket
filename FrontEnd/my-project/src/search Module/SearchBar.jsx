@@ -22,7 +22,7 @@ const SearchBar = () => {
       <div className=" col-start-2 col-end-12 row-start-2 row-end-7 mt-2 flex justify-center items-center">
         {/* <!-- searching form --> */}
 
-        <form className="formCart h-4/5 flex-row space-y-4 p-2  overflow-auto">
+        <form className="formCart h-4/5 flex-row space-y-4 p-2  overflow-auto ">
           <div className="p-1 flex space-x-2">
             <label>From:</label>
 
