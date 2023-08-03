@@ -11,10 +11,12 @@ const SearchBar = () => {
     to,
     time,
     filterDataFrom,
+    filterDataTo,
     setFrom,
     setTo,
     setTime,
     handleFilterFrom,
+    handleFilterTo,
   } = useTicket();
 
   return (
@@ -38,8 +40,8 @@ const SearchBar = () => {
 
               {filterDataFrom.length != 0 && (
                 <div>
-                  {filterDataFrom.slice(0, 5).map((value) => (
-                    <RouteSuggestion name={value.name} />
+                  {filterDataFrom.slice(0, 5).map((value,indx) => (
+                    <RouteSuggestion key={indx} name={value.name} />
                   ))}
                 </div>
               )}
@@ -53,12 +55,21 @@ const SearchBar = () => {
                 className="border-2 border-slate-500 rounded-lg w-4/5"
                 type="text"
                 value={to}
-                onChange={(e) => setTo(e.target.value)}
+                onChange={handleFilterTo}
               />
 
               {/* search suggeston */}
               {/* <RouteSuggestion /> */}
             
+
+              {filterDataTo.length != 0 && (
+                <div>
+                  {filterDataTo.slice(0, 5).map((value,indx) => (
+                    <RouteSuggestion key={indx} name={value.name} />
+                  ))}
+                </div>
+              )}
+
             
             </div>
           </div>

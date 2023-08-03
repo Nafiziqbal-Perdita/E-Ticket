@@ -18,7 +18,7 @@ console.log(request.body);
 
 router.post('/search/jatri', searchInJatri , (request,response) => {
    
-console.log(request.body);
+// console.log(request.body);
 console.log("jatri route");
 
 })

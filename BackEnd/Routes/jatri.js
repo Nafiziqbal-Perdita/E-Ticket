@@ -6,14 +6,22 @@ function searchInJatri(request, response, next) {
     console.log('First');
 
 
-    const url = "https://ticket.jatri.co/trip?from=Dhaka&to=Barishal&type=all&date=1691193600000";
+
+const {from,to,date}=request.body;
+
+
+console.log(from);
+console.log(to);
+console.log(date);
+
+
+    const url = `https://ticket.jatri.co/trip?from=${from}&to=${to}&type=all&date=${date}`;
 
     puppeteer.launch({
         headless: false,
         defaultViewport: false,
     }).then(async function (browser) {
         const page = await browser.newPage();
-
 
 
         await page.goto(url, {
@@ -47,6 +55,8 @@ function searchInJatri(request, response, next) {
                     route: route,
                     departureTime: startTime[1].innerText,
                     price: price,
+                    photo:"jatri",
+                    
                 }
 
                 arr.push(obj);

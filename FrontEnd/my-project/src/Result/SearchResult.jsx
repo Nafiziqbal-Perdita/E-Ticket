@@ -8,7 +8,7 @@ const SearchResult = () => {
 
   // console.log(ticket);
 
-  ticket.map((e,i) => console.log( "index"+i+" "+  e.name + " " + e.price));
+  ticket.map((e,i) => console.log( "index"+i+" "+  e.name + " " + e.price+" "+e.photo));
 
   return (
     <>
@@ -23,6 +23,7 @@ const SearchResult = () => {
             time={data.departureTime}
             seat={data.seat}
             price={data.price}
+            photo={data.photo}
           />
         ))}
       </div>

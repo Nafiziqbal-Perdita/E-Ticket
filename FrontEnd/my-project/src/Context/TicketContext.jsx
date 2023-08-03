@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { nameTojatri } from "../Data/nameTojatri";
+import { sohojMonth } from "../Data/sohojMonth";
 import data from "../search Module/data.json";
 const TicketContext = React.createContext();
 
@@ -16,26 +17,54 @@ export const TicketProvider = ({ children }) => {
   const [ticket, setTicket] = useState([]);
 
   const [filterDataFrom, setFilterDataFrom] = useState([]);
+  const [filterDataTo, setFilterDataTo] = useState([]);
   const [word, setWord] = useState("");
 
   let jatriData = [];
   let sohojData = [];
 
   //functions are deployed here
-
+  // for sohoj
   const sohojCall = async () => {
+    console.log("sohoj Call date");
+
+    console.log(time);
+
+    const year = time.substring(0, 4);
+    console.log(year);
+    const mnth = time.substring(5, 7);
+    console.log(mnth);
+    const date = time.substring(8, 10);
+    console.log(date);
+    let month = "";
+    for (const key in sohojMonth) {
+      // console.log(nameTojatri[key]);
+      if (key === mnth) {
+        month = sohojMonth[key];
+      }
+    }
+
+    console.log(month);
+
+    const finalDate = `${date}-${month}-${year}`;
+    console.log(finalDate);
+
+    const departure = from[0].toUpperCase() + from.slice(1);
+    const destination = to[0].toUpperCase() + to.slice(1);
+
+    console.log(departure);
+    console.log(destination);
     // making requst to sohoj information
     try {
       const res = await axios.post("http://localhost:7000/search/sohoj", {
-        from: "Dhaka",
-        to: "Barisal",
-        date: "05-Aug-2023",
+        from: departure,
+        to: destination,
+        date: finalDate,
       });
       // console.log(res.data);
       const tickets = res.data;
       // console.log(tickets);
       sohojData = tickets;
-      console.log("sohoj " + temp);
 
       // tickets.map((e) => console.log(e.name + " " + e.price));
     } catch (error) {
@@ -48,39 +77,45 @@ export const TicketProvider = ({ children }) => {
 
   const jatriCall = async () => {
     // making requst to jatri information
-    var myDate = new Date("2023-08-06"); //year-month-date
-    var result = myDate.getTime();
+    var myDate = new Date(time); //year-month-date
+    var resultingTime = myDate.getTime();
     console.log("date in ms");
-    console.log(result);
+    console.log(resultingTime);
+
+    const departure = from[0].toUpperCase() + from.slice(1);
+    const destination = to[0].toUpperCase() + to.slice(1);
 
     let fromLocal = "";
     for (const key in nameTojatri) {
       // console.log(nameTojatri[key]);
-      if (key === from) {
+      if (key === departure) {
         fromLocal = nameTojatri[key];
       }
     }
     let toLocal = "";
     for (const key in nameTojatri) {
       // console.log(nameTojatri[key]);
-      if (key === to) {
+      if (key === destination) {
         toLocal = nameTojatri[key];
       }
     }
     console.log("main data");
 
+    console.log("This is Jatri Call function");
+    console.log(fromLocal);
+    console.log(toLocal);
+
     try {
       const res = await axios.post("http://localhost:7000/search/jatri/", {
-        from: "Dhaka",
-        to: "Barisal",
-        date: "05-Aug-2023",
+        from: fromLocal,
+        to: toLocal,
+        date: resultingTime,
       });
       // console.log(res.data);
       const tickets = res.data;
       // console.log(tickets);
       jatriData = tickets;
-      const temp = ticket;
-      console.log("jatri " + temp);
+
       // tickets.map((e) => console.log(e.name + " " + e.price));
     } catch (error) {
       console.log("There is an error");
@@ -98,8 +133,8 @@ export const TicketProvider = ({ children }) => {
 
     setTicket(allData);
 
-    console.log(from);
-    console.log(to);
+    // console.log(from);
+    // console.log(to);
     console.log(time);
 
     // Expected output: "resolved"
@@ -107,21 +142,45 @@ export const TicketProvider = ({ children }) => {
 
   console.log(ticket);
 
+  // from data filtering and setting
   const handleFilterFrom = (e) => {
     const searchWord = e.target.value;
     setWord(searchWord);
     setFrom(e.target.value);
 
+    // filtering funciton
     const dataFilter = data.filter((value) => {
       const newData = value.name
         .toLowerCase()
         .includes(searchWord.toLowerCase());
       return newData;
     });
+
     if (searchWord === "") {
       setFilterDataFrom([]);
     } else {
       setFilterDataFrom(dataFilter);
+    }
+  };
+
+  // filtering data for To
+  const handleFilterTo = (e) => {
+    const searchWord = e.target.value;
+    setWord(searchWord);
+    setTo(e.target.value);
+
+    // filtering funciton
+    const dataFilter = data.filter((value) => {
+      const newData = value.name
+        .toLowerCase()
+        .includes(searchWord.toLowerCase());
+      return newData;
+    });
+
+    if (searchWord === "") {
+      setFilterDataTo([]);
+    } else {
+      setFilterDataTo(dataFilter);
     }
   };
 
@@ -131,11 +190,13 @@ export const TicketProvider = ({ children }) => {
     to,
     time,
     filterDataFrom,
+    filterDataTo,
     setFrom,
     setTo,
     setTime,
     asyncCall,
     handleFilterFrom,
+    handleFilterTo,
   };
 
   return (
