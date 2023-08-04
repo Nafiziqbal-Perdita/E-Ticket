@@ -27,7 +27,7 @@ module.exports = {
         'form': '    -5px -5px 8px #888888,5px 5px 8px #ffffff  ',
         'result': '  -5px -5px 8px #d4d4d4,  5px 5px 8px #fffff',
         'searchButton': ' -5px -5px 12px #9b9b9b,5px 5px 12px #ffffff',
-        'trops': ' -6px -6px 7px #999999, 6px 6px 7px #ffffff',
+        'trops': ' 6px 6px 12px #929292,-6px -6px 12px #ffffff',
 
       }
     },
