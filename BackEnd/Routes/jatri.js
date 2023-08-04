@@ -7,12 +7,12 @@ function searchInJatri(request, response, next) {
 
 
 
-const {from,to,date}=request.body;
+    const { from, to, date } = request.body;
 
 
-console.log(from);
-console.log(to);
-console.log(date);
+    console.log(from);
+    console.log(to);
+    console.log(date);
 
 
     const url = `https://ticket.jatri.co/trip?from=${from}&to=${to}&type=all&date=${date}`;
@@ -54,9 +54,9 @@ console.log(date);
                     type: typeNames[n - 1],
                     route: route,
                     departureTime: startTime[1].innerText,
-                    price: price,
-                    photo:"jatri",
-                    
+                    price: price.replace(/TK/g, " ").trim(" "),
+                    photo: "jatri",
+
                 }
 
                 arr.push(obj);

@@ -24,7 +24,7 @@ const SearchBar = () => {
       <div className=" col-start-2 col-end-12 row-start-2 row-end-7 mt-2 flex justify-center items-center">
         {/* <!-- searching form --> */}
 
-        <form className="formCart h-4/5 flex-row space-y-4 p-2  overflow-auto ">
+        <form className="formCart h-4/5 flex-row space-y-4 p-2 overflow-auto formRes">
           <div className="p-1 flex space-x-2">
             <label>From:</label>
 
@@ -79,7 +79,7 @@ const SearchBar = () => {
 
             <input
               type="date"
-              className="border-2 border-slate-500 rounded-lg w-3/5"
+              className="border-2 border-slate-500  rounded-lg w-3/5 fromDateRes"
               value={time}
               onChange={(e) => setTime(e.target.value)}
             />
@@ -87,13 +87,13 @@ const SearchBar = () => {
             {/* <p>time is {time}</p> */}
           </div>
           {/* <!-- search button  --> */}
-          <div className=" w-full flex justify-center ">
+          <div className=" w-full flex justify-center fromSearchRes ">
             <div className=" buttonCart bg-white w-2/4 text-center       ">
               <button onClick={asyncCall}>Search</button>
             </div>
           </div>
 
-          <div className="w-5/6  m-6 bg-slate-100">
+          <div className="w-5/6 m-6 bg-slate-100 md:hidden">
             <p className="text-sm">Note:</p>
             <p className="font-serif text-xs">
               Please make sure a stable connection

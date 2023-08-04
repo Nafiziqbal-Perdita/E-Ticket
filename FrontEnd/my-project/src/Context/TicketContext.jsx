@@ -26,16 +26,16 @@ export const TicketProvider = ({ children }) => {
   //functions are deployed here
   // for sohoj
   const sohojCall = async () => {
-    console.log("sohoj Call date");
+    // console.log("sohoj Call date");
 
-    console.log(time);
+    // console.log(time);
 
     const year = time.substring(0, 4);
-    console.log(year);
+    // console.log(year);
     const mnth = time.substring(5, 7);
-    console.log(mnth);
+    // console.log(mnth);
     const date = time.substring(8, 10);
-    console.log(date);
+    // console.log(date);
     let month = "";
     for (const key in sohojMonth) {
       // console.log(nameTojatri[key]);
@@ -44,16 +44,16 @@ export const TicketProvider = ({ children }) => {
       }
     }
 
-    console.log(month);
+    // console.log(month);
 
     const finalDate = `${date}-${month}-${year}`;
-    console.log(finalDate);
+    // console.log(finalDate);
 
     const departure = from[0].toUpperCase() + from.slice(1);
     const destination = to[0].toUpperCase() + to.slice(1);
 
-    console.log(departure);
-    console.log(destination);
+    // console.log(departure);
+    // console.log(destination);
     // making requst to sohoj information
     try {
       const res = await axios.post("http://localhost:7000/search/sohoj", {
@@ -79,8 +79,8 @@ export const TicketProvider = ({ children }) => {
     // making requst to jatri information
     var myDate = new Date(time); //year-month-date
     var resultingTime = myDate.getTime();
-    console.log("date in ms");
-    console.log(resultingTime);
+    // console.log("date in ms");
+    // console.log(resultingTime);
 
     const departure = from[0].toUpperCase() + from.slice(1);
     const destination = to[0].toUpperCase() + to.slice(1);
@@ -99,11 +99,11 @@ export const TicketProvider = ({ children }) => {
         toLocal = nameTojatri[key];
       }
     }
-    console.log("main data");
+    // console.log("main data");
 
-    console.log("This is Jatri Call function");
-    console.log(fromLocal);
-    console.log(toLocal);
+    // console.log("This is Jatri Call function");
+    // console.log(fromLocal);
+    // console.log(toLocal);
 
     try {
       const res = await axios.post("http://localhost:7000/search/jatri/", {
@@ -123,24 +123,30 @@ export const TicketProvider = ({ children }) => {
     }
   };
 
+ 
+
+  let allData = [];
+
   async function asyncCall(e) {
     console.log("clicked the request function");
     e.preventDefault();
     await sohojCall();
     await jatriCall();
 
-    const allData = sohojData.concat(jatriData);
+    allData = sohojData.concat(jatriData);
+
+
+ 
 
     setTicket(allData);
-
     // console.log(from);
     // console.log(to);
-    console.log(time);
+    // console.log(time);
 
     // Expected output: "resolved"
   }
 
-  console.log(ticket);
+  // console.log(ticket);
 
   // from data filtering and setting
   const handleFilterFrom = (e) => {

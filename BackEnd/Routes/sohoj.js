@@ -46,7 +46,7 @@ function searchInSohoz(request, response, next) {
             route: route.innerText,
             departureTime: depTime.innerText,
             seat: seatAval.innerText,
-            price: price.innerText,
+            price: price.innerText.replace(/৳ /g, " ").trim(" "),
             photo: "sohoj",
           };
 

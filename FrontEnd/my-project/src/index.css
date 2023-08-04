@@ -20,7 +20,52 @@
 }
 .buttonCart{
     @apply  hover:scale-110 duration-300  rounded-[45px] shadow-searchButton
+    md:w-1/4
 }
 .tropCart{
-    @apply rounded-[18px] shadow-trops 
+    @apply rounded-[15px] shadow-trops 
 }
+
+
+/* responsive design utility */
+
+.formRes{
+    @apply md:bg-blue-50 md:w-3/4 md:flex md:flex-wrap md:space-y-0 md:h-2/3
+    md:justify-evenly
+    
+}
+.fromDateRes{
+    @apply md:h-8 md:w-36
+}
+
+.fromSearchRes{
+    @apply md:mt-4 md:h-8
+}
+
+
+.searchBoxRes{
+    @apply md:space-x-3  md:space-y-2
+}
+
+
+.searchCartRes{
+    @apply  md:bg-yellow-50 md:w-2/5 md:h-44 md:m-2 md:p-1
+}
+.cartImageRes{
+    @apply  md:h-32
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
