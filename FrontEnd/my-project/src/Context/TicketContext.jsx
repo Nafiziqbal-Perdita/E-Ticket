@@ -15,7 +15,7 @@ export const TicketProvider = ({ children }) => {
   const [to, setTo] = useState("");
   const [time, setTime] = useState("");
   const [ticket, setTicket] = useState([]);
-
+  const [loading, setLoading] = useState(false);
   const [filterDataFrom, setFilterDataFrom] = useState([]);
   const [filterDataTo, setFilterDataTo] = useState([]);
   const [word, setWord] = useState("");
@@ -128,11 +128,12 @@ export const TicketProvider = ({ children }) => {
   async function asyncCall(e) {
     console.log("clicked the request function");
     e.preventDefault();
+    setLoading(true);
     await sohojCall();
     await jatriCall();
 
     allData = sohojData.concat(jatriData);
-
+    setLoading(false);
     setTicket(allData);
     // console.log(from);
     // console.log(to);
@@ -152,10 +153,9 @@ export const TicketProvider = ({ children }) => {
       const newData = value.name
         .toLowerCase()
         .includes(searchWord.toLowerCase());
-
       return newData;
     });
-    
+
     const notShowWord = searchWord[0].toUpperCase() + searchWord.slice(1);
     console.log(notShowWord);
     if (searchWord === "") {
@@ -170,7 +170,7 @@ export const TicketProvider = ({ children }) => {
   // filtering data for To
   const handleFilterTo = (e) => {
     const searchWord = e.target.value;
-    setWord(searchWord);
+
     setTo(e.target.value);
 
     // filtering funciton
@@ -181,10 +181,13 @@ export const TicketProvider = ({ children }) => {
       return newData;
     });
 
+    const notShowWord = searchWord[0].toUpperCase() + searchWord.slice(1);
     if (searchWord === "") {
       setFilterDataTo([]);
+    } else if (dataFilter.length === 1 && dataFilter[0].name === notShowWord) {
+      setFilterDataTo([]);
     } else {
-      setFilterDataTo(dataFilter);
+      setFilterDataTo (dataFilter);
     }
   };
 
@@ -193,6 +196,7 @@ export const TicketProvider = ({ children }) => {
     from,
     to,
     time,
+    loading,
     filterDataFrom,
     filterDataTo,
     setFrom,

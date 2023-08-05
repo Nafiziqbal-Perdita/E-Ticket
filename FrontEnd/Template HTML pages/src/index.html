@@ -1,155 +1,123 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/dist/output.css" rel="stylesheet" />
-  </head>
 
-  <body>
-    <!-- the whole screen  -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/dist/output.css" rel="stylesheet" />
+</head>
 
-    <div class="h-screen w-screen bg-gray-200 grid grid-cols-12 grid-rows-12">
-      <!-- nav bar  -->
+<body>
+  <!-- the whole screen  -->
 
-      <div
-        class="navCart col-span-full bg-sky-400 flex justify-center items-center"
-      >
-        <p class="font-extrabold font-serif text-lg text-yellow-50">
-          Real Time Ticket
-        </p>
-      </div>
+  <div class="h-screen w-screen bg-gray-200 grid grid-cols-12 grid-rows-12">
+    <!-- nav bar  -->
 
-      <!-- search utility -->
+    <div class="navCart col-span-full bg-sky-400 flex justify-center items-center">
+      <p class="font-extrabold font-serif text-lg text-yellow-50">
+        Real Time Ticket
+      </p>
+    </div>
 
-      <div
-        class="col-start-2 col-end-12 row-start-2 row-end-7 mt-2 flex justify-center items-center"
-      >
-        <!-- searching form -->
+    <!-- search utility -->
 
-        <form class="formCart h-4/5 flex-row space-y-4 p-2 overflow-auto formRes">
-          <div class="p-1 flex space-x-2   ">
-            <label for="">From:</label>
-            <!-- from input box -->
-            <div class=" ">
-              <input
-                class="border-2 border-slate-500 rounded-lg w-4/5"
-                type="text"
-              />
-              <!-- search suggestion -->
-              <div class="bg-white  w-4/5 rounded-lg mt-1">
-                <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
-                  <p class="px-1">Dhaka</p>
-                </div>
+    <div class="col-start-2 col-end-12 row-start-2 row-end-7 mt-2 flex justify-center items-center">
+      <!-- searching form -->
 
-                <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
-                  <p class="px-1">Dhaka</p>
-                </div>
+      <form class="formCart h-4/5 flex-row space-y-4 p-2 overflow-auto formRes">
+        <div class="p-1 flex space-x-2   ">
+          <label for="">From:</label>
+          <!-- from input box -->
+          <div class=" ">
+            <input class="border-2 border-slate-500 rounded-lg w-4/5" type="text" />
+            <!-- search suggestion -->
+            <div class="bg-white  w-4/5 rounded-lg mt-1">
+              <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                <p class="px-1">Dhaka</p>
               </div>
-            </div>
-          </div>
 
-          <div class="p-1  flex space-x-7">
-            <label for="">To:</label>
-            <!-- search destination part -->
-            <div class=" ">
-              <input
-                class="border-2 border-slate-500 rounded-lg w-4/5"
-                type="text"
-              />
-              <!-- search suggestion -->
-              <div class="bg-white  w-4/5 rounded-lg mt-1">
-                <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
-                  <p class="px-1">Dhaka</p>
-                </div>
-
-                <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
-                  <p class="px-1">Dhaka</p>
-                </div>
+              <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                <p class="px-1">Dhaka</p>
               </div>
-            </div>
-          </div>
-
-          <div class="p-1 flex space-x-3 ">
-            <label for="">Date:</label>
-            <input
-              class="border-2 border-slate-500  rounded-lg w-3/5 fromDateRes"
-              type="date"
-            />
-          </div>
-          <!-- search button  -->
-          <div class="w-full flex justify-center fromSearchRes  ">
-            <div class="buttonCart bg-white w-2/4 text-center">
-              <button>Search</button>
-            </div>
-          </div>
-
-          <div class="w-5/6 m-6 bg-slate-100 md:hidden">
-            <p class="text-sm">Note:</p>
-            <p class="font-serif text-xs">
-              Please make sure a stable connection
-            </p>
-          </div>
-        </form>
-      </div>
-
-      <!-- Results utility -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <div
-        class="resultCart col-span-full row-start-7 row-end-13 m-2 bg-white flex flex-wrap justify-center overflow-auto  searchBoxRes "
-      >
-        <!-- every cart for Results -->
-
-        <div
-          class="mt-2 p-2 w-11/12 h-[152px] tropCart overflow-y-auto flex flex-wrap searchCartRes"
-        >
-          <!-- catagory items -->
-          <div class="w-2/3 flex flex-col flex-wrap justify-between">
-            <p class="font-serif  text-xl px-1 ">
-              Ena Transport (PVT), <sub class="font-bold text-sm">AC</sub>
-            </p>
-            <p class="bg-slate-50 rounded-md font-semibold text-sm p-1 grow">
-              Dhaka-Barisal-khulma-jossor-baliakandi-boisakhi-patharghata
-            </p>
-            <p class="p-1 text-sm font-serif">Time: 5: 45 am</p>
-
-            <div class="bg-slate-100 rounded-md p-1 flex space-x-1">
-              <p class="text-sm font-serif">Price:500 tk</p>
-              <p class="text-sm font-serif">| seats: 45</p>
-            </div>
-          </div>
-          <!-- photo -->
-          <div class="w-1/3 flex items-center justify-center">
-            <div class="">
-              <img src="../Images/jatri.jpg" class="rounded-full cartImageRes" />
             </div>
           </div>
         </div>
 
+        <div class="p-1  flex space-x-7">
+          <label for="">To:</label>
+          <!-- search destination part -->
+          <div class=" ">
+            <input class="border-2 border-slate-500 rounded-lg w-4/5" type="text" />
+            <!-- search suggestion -->
+            <div class="bg-white  w-4/5 rounded-lg mt-1">
+              <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                <p class="px-1">Dhaka</p>
+              </div>
+
+              <div class="hover:bg-yellow-50 mt-1 p-1 rounded-md text-left">
+                <p class="px-1">Dhaka</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-1 flex space-x-3 ">
+          <label for="">Date:</label>
+          <input class="border-2 border-slate-500  rounded-lg w-3/5 fromDateRes" type="date" />
+        </div>
+        <!-- search button  -->
+        <div class="w-full flex justify-center fromSearchRes  ">
+          <div class="buttonCart bg-white w-2/4 text-center">
+            <button>Search</button>
+          </div>
+        </div>
+
+        <div class="w-5/6 m-6 bg-slate-100 md:hidden">
+          <p class="text-sm">Note:</p>
+          <p class="font-serif text-xs">
+            Please make sure a stable connection
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <!-- Results utility -->
+
+
+    <div
+      class="resultCart col-span-full row-start-7 row-end-13 m-2 bg-white flex flex-wrap justify-center overflow-auto  searchBoxRes ">
+      <!-- every cart for Results -->
+
+      <div class="mt-2 p-2 w-11/12 h-[152px] tropCart overflow-y-auto flex flex-wrap searchCartRes">
+        <!-- catagory items -->
+        <div class="w-2/3 flex flex-col flex-wrap justify-between">
+          <p class="font-serif  text-xl px-1 ">
+            Ena Transport (PVT), <sub class="font-bold text-sm">AC</sub>
+          </p>
+          <p class="bg-slate-50 rounded-md font-semibold text-sm p-1 grow">
+            Dhaka-Barisal-khulma-jossor-baliakandi-boisakhi-patharghata
+          </p>
+          <p class="p-1 text-sm font-serif">Time: 5: 45 am</p>
+
+          <div class="bg-slate-100 rounded-md p-1 flex space-x-1">
+            <p class="text-sm font-serif">Price:500 tk</p>
+            <p class="text-sm font-serif">| seats: 45</p>
+          </div>
+        </div>
+        <!-- photo -->
+        <div class="w-1/3 flex items-center justify-center">
+          <div class="">
+            <img src="../Images/jatri.jpg" class="rounded-full cartImageRes" />
+          </div>
+        </div>
+      </div>
 
 
 
-        
 
-        <div
-        class="mt-2 p-2 w-11/12 h-36 tropCart overflow-y-auto flex flex-wrap searchCartRes"
-      >
+
+
+      <div class="mt-2 p-2 w-11/12 h-36 tropCart overflow-y-auto flex flex-wrap searchCartRes">
         <!-- catagory items -->
         <div class="w-2/3 flex flex-col flex-wrap justify-between">
           <p class="font-serif text-xl px-1 h-8">
@@ -173,79 +141,76 @@
         </div>
       </div>
 
-      <div
-      class="mt-2 p-2 w-11/12 h-36 tropCart overflow-y-auto flex flex-wrap searchCartRes"
-    >
-      <!-- catagory items -->
-      <div class="w-2/3 flex flex-col flex-wrap justify-between">
-        <p class="font-serif text-xl px-1 h-8">
-          Hanif Enterprise, <sub class="font-bold text-sm">AC</sub>
-        </p>
-        <p class="bg-slate-50 rounded-md font-semibold text-sm p-1 grow">
-          Dhaka-Barisal-khulma-jossor-baliakandi-boisakhi-patharghata
-        </p>
-        <p class="p-1 text-sm font-serif">Time: 5: 45 am</p>
+      <div class="mt-2 p-2 w-11/12 h-36 tropCart overflow-y-auto flex flex-wrap searchCartRes">
+        <!-- catagory items -->
+        <div class="w-2/3 flex flex-col flex-wrap justify-between">
+          <p class="font-serif text-xl px-1 h-8">
+            Hanif Enterprise, <sub class="font-bold text-sm">AC</sub>
+          </p>
+          <p class="bg-slate-50 rounded-md font-semibold text-sm p-1 grow">
+            Dhaka-Barisal-khulma-jossor-baliakandi-boisakhi-patharghata
+          </p>
+          <p class="p-1 text-sm font-serif">Time: 5: 45 am</p>
 
-        <div class="bg-slate-100 rounded-md p-1 flex space-x-1">
-          <p class="text-sm font-serif">Price:500 tk</p>
-          <p class="text-sm font-serif">| seats: 45</p>
+          <div class="bg-slate-100 rounded-md p-1 flex space-x-1">
+            <p class="text-sm font-serif">Price:500 tk</p>
+            <p class="text-sm font-serif">| seats: 45</p>
+          </div>
+        </div>
+        <!-- photo -->
+        <div class="w-1/3 flex items-center justify-center">
+          <div class="">
+            <img src="../Images/jatri.jpg" class="rounded-full cartImageRes" />
+          </div>
         </div>
       </div>
-      <!-- photo -->
-      <div class="w-1/3 flex items-center justify-center">
-        <div class="">
-          <img src="../Images/jatri.jpg" class="rounded-full cartImageRes" />
+
+      <div class="mt-2 p-2 w-11/12 h-36 tropCart overflow-y-auto flex flex-wrap searchCartRes">
+        <!-- catagory items -->
+        <div class="w-2/3 flex flex-col flex-wrap justify-between">
+          <p class="font-serif text-xl px-1 h-8">
+            Hanif Enterprise, <sub class="font-bold text-sm">AC</sub>
+          </p>
+          <p class="bg-slate-50 rounded-md font-semibold text-sm p-1 grow">
+            Dhaka-Barisal-khulma-jossor-baliakandi-boisakhi-patharghata
+          </p>
+          <p class="p-1 text-sm font-serif">Time: 5: 45 am</p>
+
+          <div class="bg-slate-100 rounded-md p-1 flex space-x-1">
+            <p class="text-sm font-serif">Price:500 tk</p>
+            <p class="text-sm font-serif">| seats: 45</p>
+          </div>
+        </div>
+        <!-- photo -->
+        <div class="w-1/3 flex items-center justify-center">
+          <div class="">
+            <img src="../Images/jatri.jpg" class="rounded-full cartImageRes" />
+          </div>
         </div>
       </div>
+
     </div>
 
-    <div
-    class="mt-2 p-2 w-11/12 h-36 tropCart overflow-y-auto flex flex-wrap searchCartRes"
-  >
-    <!-- catagory items -->
-    <div class="w-2/3 flex flex-col flex-wrap justify-between">
-      <p class="font-serif text-xl px-1 h-8">
-        Hanif Enterprise, <sub class="font-bold text-sm">AC</sub>
-      </p>
-      <p class="bg-slate-50 rounded-md font-semibold text-sm p-1 grow">
-        Dhaka-Barisal-khulma-jossor-baliakandi-boisakhi-patharghata
-      </p>
-      <p class="p-1 text-sm font-serif">Time: 5: 45 am</p>
 
-      <div class="bg-slate-100 rounded-md p-1 flex space-x-1">
-        <p class="text-sm font-serif">Price:500 tk</p>
-        <p class="text-sm font-serif">| seats: 45</p>
-      </div>
-    </div>
-    <!-- photo -->
-    <div class="w-1/3 flex items-center justify-center">
-      <div class="">
-        <img src="../Images/jatri.jpg" class="rounded-full cartImageRes" />
-      </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
+</body>
 
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-  </body>
 </html>
