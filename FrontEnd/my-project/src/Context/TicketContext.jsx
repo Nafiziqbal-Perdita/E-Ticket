@@ -123,8 +123,6 @@ export const TicketProvider = ({ children }) => {
     }
   };
 
- 
-
   let allData = [];
 
   async function asyncCall(e) {
@@ -134,9 +132,6 @@ export const TicketProvider = ({ children }) => {
     await jatriCall();
 
     allData = sohojData.concat(jatriData);
-
-
- 
 
     setTicket(allData);
     // console.log(from);
@@ -151,18 +146,21 @@ export const TicketProvider = ({ children }) => {
   // from data filtering and setting
   const handleFilterFrom = (e) => {
     const searchWord = e.target.value;
-    setWord(searchWord);
     setFrom(e.target.value);
-
     // filtering funciton
     const dataFilter = data.filter((value) => {
       const newData = value.name
         .toLowerCase()
         .includes(searchWord.toLowerCase());
+
       return newData;
     });
-
+    
+    const notShowWord = searchWord[0].toUpperCase() + searchWord.slice(1);
+    console.log(notShowWord);
     if (searchWord === "") {
+      setFilterDataFrom([]);
+    } else if (dataFilter.length === 1 && dataFilter[0].name === notShowWord) {
       setFilterDataFrom([]);
     } else {
       setFilterDataFrom(dataFilter);

@@ -18,6 +18,7 @@ function searchInSohoz(request, response, next) {
         timeout: 0,
       });
 
+      
       await page.waitForSelector(".trip-row", {
         visible: true,
       });
@@ -35,14 +36,21 @@ function searchInSohoz(request, response, next) {
 
           const lists = operator.querySelectorAll("ul > li");
           const name = lists[0];
-          const type = lists[1];
+          const types = lists[1].innerText;
           const route = lists[2];
           const startPoint = lists[3];
           const endPoint = lists[4];
 
+          let type = "";
+          if (types.includes("Non")) {
+            type = "Non-Ac";
+          } else {
+            type = "Ac";
+          }
+
           const obj = {
             name: name.innerText,
-            type: type.innerText,
+            type: type,
             route: route.innerText,
             departureTime: depTime.innerText,
             seat: seatAval.innerText,

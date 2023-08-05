@@ -7,15 +7,19 @@ const SearchResult = () => {
   let ticketData = [];
   ticketData = ticket;
 
+  // sorting data for to display in ascending order
+
   ticketData.sort((a, b) => {
     let fa = a.price.toLowerCase();
     let fb = b.price.toLowerCase();
 
+    const x = parseInt(fa);
+    const y = parseInt(fb);
 
-    if (fa < fb) {
+    if (x < y) {
       return -1;
     }
-    if (fa > fb) {
+    if (x > y) {
       return 1;
     }
     return 0;
@@ -24,7 +28,17 @@ const SearchResult = () => {
   // console.log(ticket);
 
   ticket.map((e, i) =>
-    console.log("index" + i + " " + e.name + " " + e.price + typeof e.price + "  " + e.photo)
+    console.log(
+      "index" +
+        i +
+        " " +
+        e.name +
+        " " +
+        e.price +
+        " "+ e.type +
+        "  " +
+        e.photo
+    )
   );
 
   return (
@@ -36,6 +50,7 @@ const SearchResult = () => {
           <Cart
             key={i}
             name={data.name}
+            type={data.type}
             route={data.route}
             time={data.departureTime}
             seat={data.seat}
