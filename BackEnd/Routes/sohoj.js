@@ -34,7 +34,6 @@ function searchInSohoz(request, response, next) {
           const view = row.querySelector(".tbl_col6");
           const price = row.querySelector('.fare-list').innerText;
 
-
           const lists = operator.querySelectorAll("ul > li");
           const name = lists[0];
           const types = lists[1].innerText;
