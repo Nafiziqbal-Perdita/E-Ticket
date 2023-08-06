@@ -32,7 +32,8 @@ function searchInSohoz(request, response, next) {
           const arrTime = row.querySelector(".tbl_col4");
           const seatAval = row.querySelector(".tbl_col5");
           const view = row.querySelector(".tbl_col6");
-          const price = view.querySelector(".fare_li");
+          const price = row.querySelector('.fare-list').innerText;
+
 
           const lists = operator.querySelectorAll("ul > li");
           const name = lists[0];
@@ -54,7 +55,7 @@ function searchInSohoz(request, response, next) {
             route: route.innerText,
             departureTime: depTime.innerText,
             seat: seatAval.innerText,
-            price: price.innerText.replace(/৳ /g, " ").trim(" "),
+            price: price.replace(/৳ /g, " ").trim(" "),
             photo: "sohoj",
           };
 
